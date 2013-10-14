@@ -1,0 +1,14 @@
+{
+	"name": "Right-Click Translate",
+	"description": "Adds a right-click menu to translate selected text using Google Translate",
+	"background": {
+		"scripts": ["background.js"]
+	},
+	"permissions": ["contextMenus"],
+	"icons": {
+		"16": "icon16.png",
+		"128": "icon128.png"
+	},
+	"version": "1.1",
+	"manifest_version": 2
+}
