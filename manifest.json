@@ -2,7 +2,7 @@
 	"manifest_version": 2,
 	"name": "Right-Click Translate",
 	"version": "1.2",
-	"description": "Right-Click to translate selected text using Google Translate",
+	"description": "Right-Click to translate selected text into a new Tab using Google Translate",
 	"background": {
 		"scripts": ["background.js"]
 	},
