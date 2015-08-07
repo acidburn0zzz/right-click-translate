@@ -1,6 +1,8 @@
 {
+	"manifest_version": 2,
 	"name": "Right-Click Translate",
-	"description": "Adds a right-click menu to translate selected text using Google Translate",
+	"version": "1.2",
+	"description": "Right-Click to translate selected text using Google Translate",
 	"background": {
 		"scripts": ["background.js"]
 	},
@@ -9,6 +11,5 @@
 		"16": "icon16.png",
 		"128": "icon128.png"
 	},
-	"version": "1.1",
-	"manifest_version": 2
+	"homepage_url": "https://github.com/ericvan76/right-click-translate"
 }
