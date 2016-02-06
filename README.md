@@ -1,6 +1,6 @@
-##Right-Click Translate
+##Right Click Translate
 
-Right-Click to translate selected text into a new Tab using Google Translate
+Right Click to translate selected text into a new Tab using Google Translate
 
 Download: [http://goo.gl/Rcjs82](http://goo.gl/Rcjs82)
 
