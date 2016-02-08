@@ -12,7 +12,7 @@
 })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
 // Create GA tracker
-ga('create', 'UA-73153112-4', 'auto');
+ga('create', 'UA-73153112-5', 'auto');
 
 // Add context menu
 chrome.contextMenus.create({
@@ -34,7 +34,7 @@ chrome.contextMenus.create({
     ga('send', {
       hitType: 'event',
       eventCategory: 'translate',
-      eventAction: 'click',
+      eventAction: 'clicked',
       nonInteraction: true
     });
 
