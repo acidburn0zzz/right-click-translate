@@ -7,5 +7,8 @@ Download: [http://goo.gl/Rcjs82](http://goo.gl/Rcjs82)
 ----------
 ####What's New
 
- - 2015-08-07
-	 - Open new tab next to the current one.
+* 2016-02-09
+    * Add google analytics tracking code
+
+* 2015-08-07
+    * Open new tab next to the current one.
