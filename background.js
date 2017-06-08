@@ -26,7 +26,7 @@ chrome.contextMenus.create({
     }, function(tabs) {
       chrome.tabs.create({
         index: tabs[0].index + 1,
-        url: 'http://translate.google.com.au/#auto/#/' + encodeURIComponent(info.selectionText)
+        url: 'http://translate.google.com/#auto/#/' + encodeURIComponent(info.selectionText)
       });
     });
 
