@@ -1,7 +1,7 @@
 // Google Analytics
-(function(i, s, o, g, r, a, m) {
+(function (i, s, o, g, r, a, m) {
   i['GoogleAnalyticsObject'] = r;
-  i[r] = i[r] || function() {
+  i[r] = i[r] || function () {
     (i[r].q = i[r].q || []).push(arguments)
   }, i[r].l = 1 * new Date();
   a = s.createElement(o),
@@ -16,22 +16,24 @@ ga('create', 'UA-73153112-5', 'auto');
 
 // Add context menu
 chrome.contextMenus.create({
-  title: "Translate '%s'",
-  contexts: ["selection"],
+  title: `Translate "%s"`,
+  contexts: ['selection'],
   onclick: function translate(info) {
-
-    // Create new Tab
-    chrome.tabs.query({
-      active: true
-    }, function(tabs) {
-      chrome.tabs.create({
-        index: tabs[0].index + 1,
-        url: 'http://translate.google.com/#auto/#/' + encodeURIComponent(info.selectionText)
+    chrome.storage.sync.get({
+      lang: 'en',
+    }, function (items) {
+      // Create new Tab
+      chrome.tabs.query({
+        active: true
+      }, function (tabs) {
+        chrome.tabs.create({
+          index: tabs[0].index + 1,
+          url: `http://translate.google.com/#auto/${items.lang}/${encodeURIComponent(info.selectionText)}`
+        });
       });
     });
-
     // @see: http://stackoverflow.com/a/22152353/1958200
-    ga('set', 'checkProtocolTask', function() {});
+    ga('set', 'checkProtocolTask', function () { });
     ga('require', 'displayfeatures');
     ga('send', 'pageview', '/');
   }
