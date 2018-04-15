@@ -7,7 +7,8 @@
     "typecheck": "tsc --noEmit",
     "tslint": "tslint --project tsconfig.json -t stylish",
     "qualitycheck": "npm-run-all typecheck tslint",
-    "build": "tsc"
+    "build": "tsc",
+    "watch": "tsc --watch"
   },
   "dependencies": {},
   "devDependencies": {
