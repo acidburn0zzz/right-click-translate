@@ -1,3 +1,4 @@
+let newTab;
 let tabId;
 function createNewTab(url) {
     chrome.tabs.query({
@@ -15,7 +16,7 @@ function createNewTab(url) {
 }
 function onTransClick(info, lang) {
     const url = `http://translate.google.com/#auto/${lang}/${encodeURIComponent(info.selectionText)}`;
-    if (tabId !== undefined) {
+    if (!newTab && tabId !== undefined) {
         chrome.tabs.update(tabId, { active: true, url }, (tab) => {
             if (tab) {
                 chrome.windows.update(tab.windowId, { focused: true });
@@ -34,23 +35,39 @@ function onTransClick(info, lang) {
     ga('send', 'pageview', '/');
 }
 chrome.storage.sync.get({
+    newTab: 'false',
     languages: '[]'
 }, (items) => {
+    newTab = items.newTab === 'true';
     const languages = JSON.parse(items.languages);
-    const single = languages.length === 1;
     languages.forEach((lang) => {
         // Add context menu
         chrome.contextMenus.create({
-            title: single ? `Translate "%s" to ${lang.name}` : `To ${lang.name}`,
+            title: languages.length === 1 ? `Translate "%s" to ${lang.name}` : `To ${lang.name}`,
             contexts: ['selection'],
             onclick: (info) => {
                 onTransClick(info, lang.code);
             }
         });
     });
+    if (languages.length > 1) {
+        chrome.contextMenus.create({
+            type: 'separator',
+            contexts: ['selection']
+        });
+    }
+    if (languages.length !== 1) {
+        chrome.contextMenus.create({
+            title: languages.length === 0 ? 'Translate Options...' : 'More...',
+            contexts: ['selection'],
+            onclick: () => {
+                chrome.runtime.openOptionsPage();
+            }
+        });
+    }
     chrome.contextMenus.create({
-        title: `Translate Options...`,
-        contexts: single ? ['page'] : ['page', 'selection'],
+        title: 'Translate Options...',
+        contexts: ['page'],
         onclick: () => {
             chrome.runtime.openOptionsPage();
         }

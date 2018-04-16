@@ -3,34 +3,29 @@
 
 <head>
   <title>Right Click Translate Options</title>
-  <style>
-    div.langs {
-      display: flex;
-      flex-direction: row;
-    }
-
-    div.lang {
-      display: flex;
-      padding: 2px 5px;
-      flex-wrap: nowrap;
-      white-space: nowrap;
-    }
-
-    div.lang>label {
-      margin-left: 5px
-    }
-  </style>
+  <link rel=stylesheet href="options.css">
 </head>
 
 <body>
-  <h3>Select Languages:</h3>
-  <div id="langs" class="langs">
+  <!-- tabs -->
+  <h3>Tab Management</h3>
+  <div class="item">
+    <input id="new-tab" type="checkbox">
+    <label>Always creates new tab, otherwise re-uses previously created tab.</label>
   </div>
-  <div id="hint" style="margin-top: 10px">NOTICE: If more than one languages are selected, Chrome will collapse them into a single parent menu.
+
+  <!-- languages -->
+  <h3>Target Languages</h3>
+  <div id="langs" class="item langs"></div>
+  <div id="hint" class="item warning">NOTICE: If more than one languages are selected, Chrome will collapse them into a single parent menu.</div>
+
+  <!-- buttons -->
+  <div class="buttons">
+    <button id="save">Save &amp; Close</button>
+    <span id="save-status"></span>
   </div>
-  <div style="margin-top: 10px">
-    <button id="save">Save</button>
-  </div>
+
+  <!-- scripts -->
   <script src="js/types.js"></script>
   <script src="js/options.js"></script>
 </body>

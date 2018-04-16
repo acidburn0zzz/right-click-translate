@@ -105,9 +105,7 @@ const ALL_LANGUAGES: Lang[] = [
   { code: 'zu', name: 'Zulu' }
 ];
 
-// Saves options to chrome.storage
-function save_options() {
-
+function getSelectedLanguages(): Lang[] {
   const languages: Lang[] = [];
   const langDivs = document.getElementsByClassName('lang') as HTMLCollectionOf<HTMLDivElement>;
   // tslint:disable-next-line:prefer-for-of
@@ -119,13 +117,50 @@ function save_options() {
       languages.push({ code: checkBox.value, name: label.textContent || '' });
     }
   }
+  return languages;
+}
 
+function onCheckChanged() {
+  const languages = getSelectedLanguages();
+  const hint = document.getElementById('hint') as HTMLDivElement;
+  if (languages.length > 1) {
+    hint.style.display = 'block';
+  } else {
+    hint.style.display = 'none';
+  }
+}
+
+function createLanguageOption(lang: Lang, checked: boolean): HTMLDivElement {
+  const langDiv = document.createElement('div') as HTMLDivElement;
+  langDiv.className = 'lang';
+  const checkBox = document.createElement('input') as HTMLInputElement;
+  checkBox.type = 'checkbox';
+  checkBox.value = lang.code;
+  checkBox.checked = checked;
+  checkBox.onclick = () => { onCheckChanged(); };
+  langDiv.appendChild(checkBox);
+  const label = document.createElement('label') as HTMLLabelElement;
+  label.textContent = lang.name;
+  langDiv.appendChild(label);
+  return langDiv;
+}
+
+// Saves options to chrome.storage
+function save_options() {
+  const newTabCheck = document.getElementById('new-tab') as HTMLInputElement;
+  const languages = getSelectedLanguages();
   chrome.storage.sync.set({
+    newTab: newTabCheck.checked ? 'true' : 'false',
     languages: JSON.stringify(languages)
   }, () => {
     // reload extension
     chrome.runtime.reload();
-    window.close();
+    const status = document.getElementById('save-status') as HTMLSpanElement;
+    status.textContent = 'Options saved.';
+    setTimeout(() => {
+      status.textContent = '';
+      window.close();
+    }, 750);
   });
 }
 
@@ -134,13 +169,18 @@ function save_options() {
 function restore_options() {
   chrome.storage.sync.get(
     {
-      languages: JSON.stringify([{ code: 'en', name: 'English' }])
+      newTab: 'false',
+      languages: '[]'
     },
     (items) => {
+      // resue tab
+      const newTab = items.newTab === 'true';
+      const newTabCheck = document.getElementById('new-tab') as HTMLInputElement;
+      newTabCheck.checked = newTab;
+      // langs
       const languages = JSON.parse(items.languages) as Lang[];
       const langsDiv = document.getElementById('langs') as HTMLDivElement;
       let groupDiv: HTMLDivElement | undefined;
-      // tslint:disable-next-line:prefer-for-of
       for (let i = 0; i < ALL_LANGUAGES.length; i++) {
         if (i % 16 === 0) {
           groupDiv = document.createElement('div') as HTMLDivElement;
@@ -151,21 +191,8 @@ function restore_options() {
         const div = createLanguageOption(lang, checked);
         groupDiv!.appendChild(div);
       }
+      onCheckChanged();
     });
-}
-
-function createLanguageOption(lang: Lang, checked: boolean): HTMLDivElement {
-  const langDiv = document.createElement('div') as HTMLDivElement;
-  langDiv.className = 'lang';
-  const checkBox = document.createElement('input') as HTMLInputElement;
-  checkBox.type = 'checkbox';
-  checkBox.value = lang.code;
-  checkBox.checked = checked;
-  langDiv.appendChild(checkBox);
-  const label = document.createElement('label') as HTMLLabelElement;
-  label.textContent = lang.name;
-  langDiv.appendChild(label);
-  return langDiv;
 }
 
 document.addEventListener('DOMContentLoaded', restore_options);

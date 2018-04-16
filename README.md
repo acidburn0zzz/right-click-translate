@@ -9,6 +9,7 @@ Right Click to translate selected text into a new Tab using Google Translate
 ### What's New
 | Date | Version | Description |
 | ---- | ------- | ----------- |
+| 2018-04-16 | 1.5.3 | Add tab management
 | 2018-04-16 | 1.5.2 | Remove requsting tabs permission |
 | 2018-04-15 | 1.5.1 | Add multiple languages support |
 | 2018-04-13 | 1.5.0 | Add options page, the new google translate page requires a target language |

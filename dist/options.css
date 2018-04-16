@@ -1,0 +1,27 @@
+div.langs {
+  display: flex;
+  flex-direction: row;
+}
+
+div.lang {
+  display: flex;
+  margin: 2px 0px;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+
+div.lang>label {
+  margin: 0px 5px;
+}
+
+.item {
+  margin: 2px 5px;
+}
+
+.warning {
+  color: #f70;
+}
+
+.buttons {
+  margin-top: 20px;
+}
