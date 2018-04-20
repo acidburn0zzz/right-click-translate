@@ -2,9 +2,9 @@
 # yarn lockfile v1
 
 
-"@types/chrome@^0.0.63":
-  version "0.0.63"
-  resolved "https://registry.yarnpkg.com/@types/chrome/-/chrome-0.0.63.tgz#b86fc8c859ec6ae0bf929b4504d7ac47d579006d"
+"@types/chrome@^0.0.64":
+  version "0.0.64"
+  resolved "https://registry.yarnpkg.com/@types/chrome/-/chrome-0.0.64.tgz#c5098de7a5a522ca6271809279973e42d2102c20"
   dependencies:
     "@types/filesystem" "*"
 
@@ -535,9 +535,9 @@ tsutils@^2.12.1:
   dependencies:
     tslib "^1.8.1"
 
-typescript@^2.8.1:
-  version "2.8.1"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.8.1.tgz#6160e4f8f195d5ba81d4876f9c0cc1fbc0820624"
+typescript@^2.8.3:
+  version "2.8.3"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.8.3.tgz#5d817f9b6f31bb871835f4edf0089f21abe6c170"
 
 validate-npm-package-license@^3.0.1:
   version "3.0.3"

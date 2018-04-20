@@ -1,6 +1,6 @@
 {
   "name": "right-click-translate",
-  "version": "1.5.3",
+  "version": "1.5.4",
   "author": "Eric",
   "license": "MIT",
   "scripts": {
@@ -12,10 +12,10 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@types/chrome": "^0.0.63",
+    "@types/chrome": "^0.0.64",
     "@types/google.analytics": "^0.0.39",
     "npm-run-all": "^4.1.2",
     "tslint": "^5.9.1",
-    "typescript": "^2.8.1"
+    "typescript": "^2.8.3"
   }
 }

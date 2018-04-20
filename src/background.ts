@@ -11,7 +11,11 @@ function createNewTab(url: string) {
       url
     }, (tab) => {
       tabId = tab.id;
-      chrome.tabs.onRemoved.addListener(() => { tabId = undefined; });
+      chrome.tabs.onRemoved.addListener((id) => {
+        if (tabId === id) {
+          tabId = undefined;
+        }
+      });
     });
   });
 }
