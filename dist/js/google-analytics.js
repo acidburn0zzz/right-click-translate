@@ -1,15 +1,1 @@
-// Google Analytics
-(function (i, s, o, g, r, a, m) {
-  i['GoogleAnalyticsObject'] = r;
-  i[r] = i[r] || function () {
-    (i[r].q = i[r].q || []).push(arguments)
-  }, i[r].l = 1 * new Date();
-  a = s.createElement(o),
-    m = s.getElementsByTagName(o)[0];
-  a.async = 1;
-  a.src = g;
-  m.parentNode.insertBefore(a, m)
-})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-
-// Create GA tracker
-ga('create', 'UA-73153112-5', 'auto');
+(function(b,c,d,e,f,g,a){b.GoogleAnalyticsObject=f,b[f]=b[f]||function(){(b[f].q=b[f].q||[]).push(arguments)},b[f].l=1*new Date,g=c.createElement(d),a=c.getElementsByTagName(d)[0],g.async=1,g.src=e,a.parentNode.insertBefore(g,a)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-73153112-5","auto");

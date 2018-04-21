@@ -5,6 +5,7 @@
     "sourceMap": false,
     "rootDir": "src",
     "outDir": "dist/js",
+    "allowJs": true,
     "noEmitHelpers": true,
     "noEmitOnError": true,
     "noImplicitAny": true,
@@ -17,6 +18,7 @@
     "strictNullChecks": true
   },
   "include": [
-    "src/**/*.ts"
+    "src/*.ts",
+    "src/*.js"
   ]
 }

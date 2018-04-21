@@ -1,19 +1,22 @@
 {
   "name": "right-click-translate",
-  "version": "1.5.4",
+  "version": "1.5.5",
   "author": "Eric",
   "license": "MIT",
   "scripts": {
     "typecheck": "tsc --noEmit",
     "tslint": "tslint --project tsconfig.json -t stylish",
     "qualitycheck": "npm-run-all typecheck tslint",
-    "build": "tsc",
-    "watch": "tsc --watch"
+    "tsc": "tsc",
+    "watch": "tsc --watch",
+    "minify": "./node_modules/.bin/minify dist/js -d dist/js",
+    "build": "npm-run-all tsc minify"
   },
   "dependencies": {},
   "devDependencies": {
     "@types/chrome": "^0.0.64",
     "@types/google.analytics": "^0.0.39",
+    "babel-minify": "^0.4.0",
     "npm-run-all": "^4.1.2",
     "tslint": "^5.9.1",
     "typescript": "^2.8.3"
