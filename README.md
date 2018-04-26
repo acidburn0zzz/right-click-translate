@@ -4,7 +4,7 @@ Right Click to translate selected text into a new Tab using Google Translate
 
 ### Download
 
-[http://goo.gl/Rcjs82](http://goo.gl/Rcjs82)
+[https://goo.gl/DZrEnA](https://goo.gl/DZrEnA)
 
 ### What's New
 | Date | Description |
