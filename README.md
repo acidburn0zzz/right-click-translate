@@ -19,3 +19,8 @@ Right Click to translate selected text into a new Tab using Google Translate
 | 2016-02-09 | Add google analytics tracking code |
 | 2015-08-07 | Open new tab next to the current one |
 | 2013-10-14 | First published |
+
+
+### Help us
+
+[![](https://www.paypalobjects.com/en_AU/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=J6L73EGZWXR4L)
