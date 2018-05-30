@@ -2,9 +2,7 @@
 
 Right Click to translate selected text into a new Tab using Google Translate
 
-### Download
-
-[https://goo.gl/DZrEnA](https://goo.gl/DZrEnA)
+See [Extension Page](https://goo.gl/DZrEnA)
 
 ### What's New
 | Date | Description |
