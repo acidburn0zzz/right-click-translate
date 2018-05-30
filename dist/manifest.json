@@ -1,9 +1,8 @@
 {
   "manifest_version": 2,
   "name": "Right Click Translate",
-  "version": "1.8.3",
+  "version": "1.8.4",
   "description": "Right Click to translate selected text into a new Tab using Google Translate",
-  "homepage_url": "https://github.com/ericvan76/right-click-translate",
   "background": {
     "scripts": [
       "js/google-analytics.js",
