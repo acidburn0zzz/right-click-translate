@@ -35,10 +35,10 @@ jobs:
       - run:
           name: "Set Version Number"
           command: |
-            echo export MY_VERSION=$(jq -r '.version' dist/manifest.json) >> $BASH_ENV
-            echo export MY_BUILD_NUM=$((CIRCLE_BUILD_NUM+2)) >> $BASH_ENV
+            echo export VERSION=$(jq -r '.version' dist/manifest.json) >> $BASH_ENV
+            echo export BUILD_NUM=$((CIRCLE_BUILD_NUM)) >> $BASH_ENV
             source $BASH_ENV
-            jq '.version="'$MY_VERSION.$MY_BUILD_NUM'"' dist/manifest.json | sponge dist/manifest.json
+            jq '.version="'$VERSION.$BUILD_NUM'"' dist/manifest.json | sponge dist/manifest.json
 
       - run:
           name: "Build and Pack"
