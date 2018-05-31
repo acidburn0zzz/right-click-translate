@@ -36,7 +36,7 @@ jobs:
           name: "Set Version Number"
           command: |
             echo export MY_VERSION=$(jq -r '.version' dist/manifest.json) >> $BASH_ENV
-            echo export MY_BUILD_NUM=$((CIRCLE_BUILD_NUM+4)) >> $BASH_ENV
+            echo export MY_BUILD_NUM=$((CIRCLE_BUILD_NUM+3)) >> $BASH_ENV
             source $BASH_ENV
             jq '.version="'$MY_VERSION.$MY_BUILD_NUM'"' dist/manifest.json | sponge dist/manifest.json
 

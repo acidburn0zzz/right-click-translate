@@ -7,6 +7,7 @@ See [Extension Page](https://goo.gl/DZrEnA)
 ### What's New
 | Date | Description |
 | ---- | ----------- |
+| 2018-05-30 | Add browser action popup |
 | 2018-04-20 | Fix tab reuse issue
 | 2018-04-16 | Add tab management
 | 2018-04-16 | Remove requsting tabs permission |
