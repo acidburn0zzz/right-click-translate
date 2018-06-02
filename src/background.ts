@@ -35,8 +35,11 @@ function onTransClick(info: chrome.contextMenus.OnClickData, lang: string) {
   }
   // @see: http://stackoverflow.com/a/22152353/1958200
   ga('set', 'checkProtocolTask', () => { /* do nothing */ });
-  ga('require', 'displayfeatures');
-  ga('send', 'pageview', '/');
+  ga('send', {
+    hitType: 'event',
+    eventCategory: 'contextMenu',
+    eventAction: 'translate'
+  });
 }
 
 chrome.storage.sync.get({
