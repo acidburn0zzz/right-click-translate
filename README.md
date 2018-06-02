@@ -1,5 +1,7 @@
 ## Right Click Translate
 
+[![CircleCI](https://circleci.com/gh/ericvan76/right-click-translate/tree/master.svg?style=svg)](https://circleci.com/gh/ericvan76/right-click-translate/tree/master)
+
 Right Click to translate selected text into a new Tab using Google Translate
 
 See [Extension Page](https://goo.gl/DZrEnA)
