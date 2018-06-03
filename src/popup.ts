@@ -1,10 +1,13 @@
 const developersUrl = 'https://github.com/ericvan76/right-click-translate';
 
-let menu = document.getElementById('options') as HTMLAnchorElement;
-menu.addEventListener('click', () => chrome.runtime.openOptionsPage());
+const optionsMenu = document.getElementById('options') as HTMLAnchorElement;
+const devMenu = document.getElementById('developers') as HTMLAnchorElement;
+const issueMenu = document.getElementById('issues') as HTMLAnchorElement;
+const donateBtn = document.getElementById('donate') as HTMLAnchorElement;
 
-menu = document.getElementById('developers') as HTMLAnchorElement;
-menu.addEventListener('click', () => chrome.tabs.create({ url: developersUrl }));
-
-menu = document.getElementById('issues') as HTMLAnchorElement;
-menu.addEventListener('click', () => chrome.tabs.create({ url: `${developersUrl}/issues` }));
+optionsMenu.addEventListener('click', () => chrome.runtime.openOptionsPage());
+devMenu.addEventListener('click', () => chrome.tabs.create({ url: developersUrl }));
+issueMenu.addEventListener('click', () => chrome.tabs.create({ url: `${developersUrl}/issues` }));
+donateBtn.addEventListener('click', () => chrome.tabs.create({
+  url: 'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=J6L73EGZWXR4L'
+}));

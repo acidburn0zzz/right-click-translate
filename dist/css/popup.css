@@ -24,3 +24,8 @@ hr {
   background-color: #eee;
 }
 
+.donate {
+  padding: 7px 21px;
+  text-decoration: none;
+  outline: none;
+}
