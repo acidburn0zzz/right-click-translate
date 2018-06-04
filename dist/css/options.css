@@ -10,7 +10,7 @@ div.lang {
   white-space: nowrap;
 }
 
-div.lang>label {
+div.lang > label {
   margin: 0px 5px;
 }
 
@@ -27,4 +27,8 @@ div.lang>label {
   flex-direction: row;
   align-items: center;
   margin-top: 20px;
+}
+
+.buttons > span {
+  margin-left: 5px;
 }
